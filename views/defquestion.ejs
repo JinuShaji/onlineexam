@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="css/defq.css">
+<div id="form-main">
+    <div id="form-div">
+      <form class="form" action="/defanswer" method="POST" id="form1">
+        <input type="text"  name="Rgno" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Rg no"></textarea>
+        <input type="text"  name="SubId" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="subject Id"></textarea>
+
+        <p class="text">
+            <% user.forEach(function(user){ %>
+            <div>
+                <h6><%= user.qtn%></h6>
+            </div>
+            <br>
+             <input type="text"  name="ans<%=user.qno%>" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder=""></textarea>
+          </p>
+          <% }); %>
+        <div class="submit">
+          <input type="submit" value="SUBMIT ANSWER" id="button-blue"/>
+          <div class="ease"></div>
+        </div>
+      </form>
+    </div>

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="css/addq.css">
+<div class="container">  
+    <form id="contact" action="/selectdef" method="post">
+      <h3>Select Category</h3>
+      <h4></h4>
+      <fieldset>
+        <input placeholder="Subject" type="text" name="sub" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Papper Id" name="pid" type="text" tabindex="2" required>
+      </fieldset>
+       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+</div>
+<body>
+    <script>
+        // '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right':scrollWidth});
+  }).resize();
+    </script>
+</body>

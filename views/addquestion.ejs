@@ -1,0 +1,52 @@
+<%- include('partials/staffNav.ejs') %>
+<link rel="stylesheet" href="css/addq.css">
+<div class="container">  
+    <form id="contact" action="/addmultipleChoice" method="post">
+      <h3> Prepare Question Papper</h3>
+      <h4></h4>
+      <fieldset>
+        <!-- <input placeholder="Subject" type="text" name="subj" tabindex="1" required autofocus> -->
+        <select name="subj" id="">
+          <option value="DS">SELECT SUBJECT</option>
+          <option value="DS">Computer</option>
+          <option value="DBMS">DBMS</option>
+          <option value="Python">Python</option>
+          <option value="AI">AI</option>
+          <option value="ML">ML</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Question Id" name="qid" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Question  Papper Code" name="qno" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Question" name="question" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="option" name="option1" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="option" name="option2" type="text" tabindex="3" required>
+      </fieldset>
+    </fieldset>
+    <fieldset>
+      <input placeholder="option" name="option3" type="text" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+        <input placeholder="option" name="option4" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Right Answers" name="Right" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Time" name="time" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+   
+    
+  </div>

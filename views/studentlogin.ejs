@@ -1,0 +1,63 @@
+
+    <link rel="stylesheet" href="css/stafflogin.css">
+    <div class="hero">
+        <div class="form-box">
+          <div class="div button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+          </div>
+          <div>
+            <p style="text-align: center; color :red"> <%=message %> </p>
+          </div>
+      
+          <div class="social-icons">
+            <img src="https://assets.codepen.io/3950346/IG.png" alt="" />
+            <img src="https://assets.codepen.io/3950346/FB.png" alt="" />
+            <img src="https://assets.codepen.io/3950346/YT.png" alt="" />
+          </div>
+      
+          <form id="login" action="/login" method="POST" class="input-group">
+            <input type="text" class="input-field" name="id" placeholder="Regsiter number" required>
+            <input type="password" class="input-field" name="pass" placeholder="Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button class="submit-btn" type="submit">Log In</button>
+          </form>
+
+
+      
+          <form id="register"  action="/register" method="post" enctype="multipart/form-data" class="input-group">
+
+            <input type="text" class="input-field" name="name" placeholder="Enter your user name" required>
+
+            <input type="text" class="input-field" name="Rgno"  placeholder="Rgno" required>
+
+            <input type="text" class="input-field" name="batch" placeholder="batch" required>
+            <input type="password" class="input-field" name="password" placeholder="password" required>
+            <input type="file" class="input-field"  name="uploaded_image" accept=""/>
+
+
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+            <button class="submit-btn" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+      <body>
+          <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            
+            function register() {
+              x.style.left = "-400px";
+              y.style.left = "50px";
+              z.style.left = "110px";
+            }
+            
+            function login() {
+              x.style.left = "50px";
+              y.style.left = "450px";
+              z.style.left = "0px";
+            }
+          </script>
+      </body>

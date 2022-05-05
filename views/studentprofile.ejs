@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/studeprofile.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600italic,600' rel='stylesheet' type='text/css'>
+  <link rel="Stylesheet" href="css/master.css" type="text/css" />
+  </style>
+
+  <link rel="Stylesheet" href="https://ianlunn.github.io/Hover/css/hover.css" type="text/css" />
+  
+  <link rel="Stylesheet" href='https://fonts.googleapis.com/css?family=Muli' type='text/css'>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">Start Exam</a>
+        <ul>
+          <li><a href="selectsub">Multiple Choice </a></li>
+          <li><a href="selectsub2">Definition Type</a>
+            </li>
+          
+            <ul>
+            
+            </ul>
+          </li>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="#">View Mark</a>
+        <ul>
+          <li><a href="viewmultiplemark">View Multiple Choice Mark</a></li>
+          <li><a href="viewdef">View Definition Mark</a></li>
+        </ul>
+      </li>
+      <li><a href="live">Viva</a></li>
+      <!-- <li><a href="chat">chat</a></li> -->
+      <li><a href="/">LOGOUT</a></li>
+    </ul>
+  </nav>
+  <section style="margin-right: 70%;">
+    <div class="card-container"> 
+
+     
+        <span class="pro">Student</span>
+        <% user.forEach(function(user){ %>
+          <img class="round" src="../images/studentpro/<%= user.pic %>" alt="user" />
+         <h3><%= user.name%></h3>
+          <h6><%= user.Uid%></h6>
+          <h6> <%=user.batch%>     </h6>
+          <% }); %>
+  
+          <p><br/> </p>
+        <div class="buttons">
+          <button class="primary">
+            Message
+          </button>
+          <button class="primary ghost">
+            Following
+          </button>
+        </div>
+        <div class="skills">
+          <h6>Skills</h6>
+          <ul>
+            <li>UI / UX</li>
+            <li>Front End Development</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+          </ul>
+        </div>
+      </div>
+      
+      <footer>
+     
+      </footer>
+  </section>
+
+<div class="welcome">
+<section>
+   
+</section>
+</div>
+
+</body>
+
+</html>

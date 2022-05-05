@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="css/addq.css" />
+<div class="container">
+  <style>
+    div {
+      background-color: #419d78;
+      color: #efd0ca;
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+
+  <head>
+    <div>
+      <div>Time left = <span id="timer"></span></div>
+    </div>
+  </head>
+
+  <form id="contact" action="/exam" method="post">
+    <h3>Select your Answer</h3>
+    <h4></h4>
+    <fieldset>
+      <input
+        placeholder="Rg Number"
+        type="text"
+        name="Rgno"
+        tabindex="1"
+        required
+        autofocus
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        placeholder="Subject"
+        name="pid"
+        type="text"
+        tabindex="2"
+        required
+      />
+      <% user.forEach(function(user){ %>
+
+      <p style="color: red;"><%= user.qtn %> :</p>
+      <input
+        type="radio"
+        id="male"
+        name="ans<%=user.qno%>"
+        value="<%= user.option1 %>"
+      />
+      <label for="male" style="color: black;"><%= user.option1 %></label>
+      <input
+        type="radio"
+        id="female"
+        name="ans<%=user.qno%>"
+        value="<%= user.option2 %>"
+      />
+      <label for="female"style="color: black;"><%= user.option2 %></label>
+      <input
+        type="radio"
+        id="other"
+        name="ans<%=user.qno%>"
+        value="<%= user.option3 %>"
+      />
+      <label for="other" style="color: black;"><%= user.option3 %></label>
+      <input
+        type="radio"
+        id="other"
+        name="ans<%=user.qno%>"
+        value="<%= user.option4 %>"
+      />
+      <label for="other"style="color: black;"><%= user.option4 %></label>
+    </fieldset>
+    <% }); %>
+    <button type="submit" id="contact-submit" data-submit="...Sending">
+      Submit
+    </button>
+  </form>
+</div>
+<body>
+  <script>
+    // '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+    $(window)
+      .on("load resize ", function () {
+        var scrollWidth =
+          $(".tbl-content").width() - $(".tbl-content table").width();
+        $(".tbl-header").css({ "padding-right": scrollWidth });
+      })
+      .resize();
+  </script>
+  <script>
+    document.getElementById("timer").innerHTML = 0012 + ":" + 60;
+    startTimer();
+
+    function startTimer() {
+      var presentTime = document.getElementById("timer").innerHTML;
+      var timeArray = presentTime.split(/[:]+/);
+      var m = timeArray[0];
+      var s = checkSecond(timeArray[1] - 1);
+      if (s == 59) {
+        m = m - 1;
+      }
+      //if(m<0){alert('timer completed')}
+
+      document.getElementById("timer").innerHTML = m + ":" + s;
+      console.log(m);
+      setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+      if (sec < 10 && sec >= 0) {
+        sec = "0" + sec;
+      } // add zero in front of numbers < 10
+      if (sec < 0) {
+        sec = "59";
+      }
+      return sec;
+    }
+  </script>
+</body>
